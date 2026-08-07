@@ -6,10 +6,16 @@
 
 typedef struct Number {
     char* magnitude;
+    size_t tamanhoMagnitude;
     int sinal;
-    int exp;
+    size_t exp;
 } Number;
 
 Number novoNumero(char* valor);
+void normalizarNumero(Number *numero);
+void definirSinalNumero(Number *numero);
+size_t contarDigitosAntesVirgula(Number *numero);
+size_t contarZerosSeguidosDepoisVirgula(Number *numero);
+int isNumeroNulo(Number *numero);
 
 #endif

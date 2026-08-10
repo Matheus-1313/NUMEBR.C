@@ -11,11 +11,17 @@ typedef struct Number {
     size_t exp;
 } Number;
 
-Number novoNumero(char* valor);
+Number* novoNumero(char* valor);
 void normalizarNumero(Number *numero);
 void definirSinalNumero(Number *numero);
 size_t contarDigitosAntesVirgula(Number *numero);
 size_t contarZerosSeguidosDepoisVirgula(Number *numero);
 int isNumeroNulo(Number *numero);
+void ajustarTamanhoNumero(Number *numero, size_t novoTamanho);
+
+// TEM QUE IMPLEMENTAR ESSAS FUNÇÕES
+Number somarPotenciaDeDez(Number *numero);
+void fecharNumero(Number *numero);
+void fecharTodosOsNumeros(Number *numero);
 
 #endif

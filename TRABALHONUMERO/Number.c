@@ -52,15 +52,7 @@ void normalizarNumero(Number *numero) {
             }
         }
 
-        char *tmp = realloc(numero->magnitude, (j + 1) * sizeof(char));
-        if (tmp == NULL) {
-            free(numero->magnitude);
-            free(magnitudeCopia);
-            free(numero);
-            exit(EXIT_FAILURE);
-        }
-
-        numero->magnitude = tmp;
+        ajustarTamanhoNumero(numero, j + 1);
     }
 
     free(magnitudeCopia);
@@ -94,14 +86,14 @@ size_t contarDigitosAntesVirgula(Number *numero) {
 }
 
 size_t contarZerosSeguidosDepoisVirgula(Number *numero) {
-    size_t posicaoVirgula = contarDigitosAntesVirgula(numero);
+    size_t posicao = contarDigitosAntesVirgula(numero);
 
-    for (size_t i = posicaoVirgula + 1; i < numero->tamanhoMagnitude; i++) {
+    for (size_t i = posicao + 1; i < numero->tamanhoMagnitude; i++) {
         if (numero->magnitude[i] != '0') {
             break;
         }
 
-        qZerosDepoisVirgula++;
+        posicao++;
     }
 }
 
@@ -112,5 +104,17 @@ int isNumeroNulo(Number *numero) {
     }
 
     return 0;
+}
+
+void ajustarTamanhoNumero(Number *numero, size_t novoTamanho) {
+    char *tmp = realloc(numero->magnitude, (novoTamanho) * sizeof(char));
+        if (tmp == NULL) {
+            free(numero->magnitude);
+            free(numero);
+            exit(EXIT_FAILURE);
+        }
+
+        numero->magnitude = tmp;
+        numero->tamanhoMagnitude = novoTamanho;
 }
 

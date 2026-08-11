@@ -1,20 +1,34 @@
+#include "Number.h"
 #include <string.h>
 #include <stdlib.h>
-#include "Number.h"
+#include <ctype.h>
+
+static Number **todosOsNumeros = NULL;
+static size_t quantidadeNumeros = 0;
 
 Number* novoNumero(char *valor) {
+    if (!isValorValido(valor)) {
+        return NULL; //ERRO
+    }
+    
     Number *ptrNumero = malloc(1 * sizeof(Number));
+    //TRATAR CASO DÊ ERRO
 
     ptrNumero->magnitude = valor;
     ptrNumero->tamanhoMagnitude = strlen(valor) + 1;
 
     definirSinalNumero(ptrNumero);
     normalizarNumero(ptrNumero);
+    registrarNumero(ptrNumero);
 
     return ptrNumero;
 }
 
-void normalizarNumero(Number *numero) {
+static void normalizarNumero(Number *numero) {
+    if (isNumeroNormalizado(numero)) {
+        return;
+    }
+
     char* magnitudeCopia;
     strcpy(magnitudeCopia, numero->magnitude);
 
@@ -58,7 +72,7 @@ void normalizarNumero(Number *numero) {
     free(magnitudeCopia);
 }
 
-void definirSinalNumero(Number *numero) {
+static void definirSinalNumero(Number *numero) {
     if (numero->magnitude[0] == '-') {
         numero->sinal = 1;
         for (size_t i = 1; i < numero->tamanhoMagnitude; i++) {
@@ -72,7 +86,7 @@ void definirSinalNumero(Number *numero) {
     }
 }
 
-size_t contarDigitosAntesVirgula(Number *numero) {
+static size_t contarDigitosAntesVirgula(Number *numero) {
     size_t qAntesVirgula = 0;
     for (size_t i = 0; i < numero->tamanhoMagnitude; i++) {
         if (numero->magnitude[i] == '.' || numero->magnitude[i] == ',') {
@@ -85,7 +99,7 @@ size_t contarDigitosAntesVirgula(Number *numero) {
     return qAntesVirgula;
 }
 
-size_t contarZerosSeguidosDepoisVirgula(Number *numero) {
+static size_t contarZerosSeguidosDepoisVirgula(Number *numero) {
     size_t posicao = contarDigitosAntesVirgula(numero);
 
     for (size_t i = posicao + 1; i < numero->tamanhoMagnitude; i++) {
@@ -106,15 +120,81 @@ int isNumeroNulo(Number *numero) {
     return 0;
 }
 
-void ajustarTamanhoNumero(Number *numero, size_t novoTamanho) {
+static void ajustarTamanhoNumero(Number *numero, size_t novoTamanho) {
     char *tmp = realloc(numero->magnitude, (novoTamanho) * sizeof(char));
         if (tmp == NULL) {
             free(numero->magnitude);
             free(numero);
             exit(EXIT_FAILURE);
-        }
+        } //ERRO
 
         numero->magnitude = tmp;
         numero->tamanhoMagnitude = novoTamanho;
 }
 
+static int isNumeroNormalizado(Number *numero) {
+    if (numero->magnitude[1] != '.' || numero->magnitude[1] != ',') {
+        return 0;
+    }
+
+    for (size_t i = 0; i < numero->tamanhoMagnitude - 1; i++) {
+        if (numero->magnitude[i] == '.' || numero->magnitude[i] == ',') {
+            continue;
+        }
+
+        if (!isdigit(numero->magnitude[i])) {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+static int isValorValido(char *valor) {
+    size_t tamanhoValor = strlen(valor) + 1;
+
+    if (valor[0] == '0' && (valor[1] != ',' || valor[1] != '.')) {
+        return 0;
+    }
+
+    int quantidadeVirgulas;
+    for (size_t i = 0; i < tamanhoValor; i++) {
+        if (valor[i] == ',' || valor[i] =='.') {
+            quantidadeVirgulas++;
+            if (quantidadeVirgulas > 1) {
+                return 0;
+            }
+            continue;
+        }
+
+        if (!isdigit(valor[i])) {
+            return 0;
+        }
+    }
+
+    return 1;
+}
+
+static void registrarNumero(Number *numero) {
+    Number **tmp = realloc(todosOsNumeros, (quantidadeNumeros + 1) * sizeof(Number*));
+    if (tmp == NULL) {
+        free(tmp);
+        free(numero);
+        fecharTodosOsNumeros();
+        free(todosOsNumeros);
+
+        exit(EXIT_FAILURE);
+    }
+
+    todosOsNumeros = tmp;
+    todosOsNumeros[quantidadeNumeros] = numero;
+    quantidadeNumeros++;
+}
+
+void fecharTodosOsNumeros() {
+    //FALTA IMPLEMENTAR AQUI
+}
+
+void fecharNumero(Number *numero) {
+    //FALTA IMPLEMENTAR AQUI
+}

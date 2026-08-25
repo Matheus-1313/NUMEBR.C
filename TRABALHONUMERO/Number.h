@@ -1,3 +1,6 @@
+#include <string.h>
+#include <stdlib.h>
+
 #ifndef NUMBER_H
 #define NUMBER_H
 
@@ -8,29 +11,11 @@ typedef struct Number {
     size_t exp;
 } Number;
 
-Number* novoNumero(char* valor);
-int isNumeroNulo(Number *numero);
-
-
-
-// TEM QUE IMPLEMENTAR ESSAS FUNÇÕES
-Number somarPotenciaDeDez(Number *numero);
-void fecharNumero(Number *numero);
-void fecharTodosOsNumeros();
-int isMaiorQue(Number *numero1, Number *numero2);
-
-/*
-FUNÇÕES QUE O USUÁRIO NÃO TEM ACESSO
+Number novoNumero(char* valor);
 void normalizarNumero(Number *numero);
 void definirSinalNumero(Number *numero);
 size_t contarDigitosAntesVirgula(Number *numero);
 size_t contarZerosSeguidosDepoisVirgula(Number *numero);
-void ajustarTamanhoNumero(Number *numero, size_t novoTamanho);
-int isNumeroNormalizado(Number *numero);
-int isValorValido(char *valor);
-void registrarNumero(Number *numero);
-*/
-
-
+int isNumeroNulo(Number *numero);
 
 #endif

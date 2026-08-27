@@ -8,9 +8,10 @@ int isNulo_number(Number *numero);
 void fechar_number(Number *numero);
 void fecharTodos_number();
 int isMaior_number(Number *antecedente, Number *consequente);
-int isIgual(Number *numero1, Number *numero2);
-int isMenor(Number *antecedente, Number *consequente);
-Number* somar_number(Number *numero1, Number *numero2, size_t precisao); //INSAAAAAAAAAAAAAAAAAAANE
+int isIgual_number(Number *numero1, Number *numero2);
+int isMenor_number(Number *antecedente, Number *consequente);
+Number* soma_number(Number *numero1, Number *numero2);
+Number* subtracao_number(Number *minuendo, Number *subtraendo);
 
 
 /*
@@ -28,5 +29,7 @@ void removerEmTodos_number(Number *numero);
 void igualarCasasDecimais_number(Number *numero1, Number *numero2);
 void anexarDigitoAEsquerda_number(Number *numero, char digito);
 Number* somarPotenciaDeDez_number(Number *numero, ssize_t exp);
+void somarPotenciaDeDezESalvar_number(Number *numero, ssize_t exp);
+static Number* duplicar_number(Number *numero);
 */
 #endif

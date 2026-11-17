@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #d9d9d9;
+    color: #444;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+}
+
+.topbar {
+    height: 29px;
+    background: #414141;
+    color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 9px;
+}
+
+.admin-badge {
+    border: 1px solid #777;
+    padding: 3px 5px;
+}
+
+.side-icon {
+    font-size: 12px;
+    cursor: default;
+}
+
+.main {
+    margin-left: 19px;
+    padding: 44px 14px 30px 15px;
+}
+
+.breadcrumb {
+    font-size: 8px;
+    color: #777;
+    margin-bottom: 17px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.page-header h1 {
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.back-link {
+    font-size: 9px;
+    text-decoration: underline;
+    color: #555;
+}
+
+.subtitle {
+    font-size: 9px;
+    margin-bottom: 8px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(230px, 1fr);
+    gap: 12px;
+    align-items: start;
+}
+
+.section-card {
+    border: 1px solid #c5c5c5;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #c4c4c4;
+    padding-bottom: 9px;
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.required-info {
+    font-size: 8px;
+    color: #777;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.field label {
+    font-size: 8px;
+}
+
+.fake-input {
+    height: 25px;
+    background: #dedede;
+    border: 1px solid #bdbdbd;
+    padding: 6px 8px;
+    font-family: inherit;
+    font-size: 9px;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 10px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.field-note {
+    font-size: 8px;
+    color: #777;
+    margin-top: 3px;
+}
+
+.reservations-card {
+    padding: 12px;
+}
+
+.reservations-description {
+    font-size: 9px;
+    color: #666;
+    margin: -4px 0 9px;
+    line-height: 1.5;
+}
+
+.reservation-day {
+    border: 1px solid #c1c1c1;
+    margin-bottom: 5px;
+}
+
+.reservation-day summary {
+    list-style: none;
+    cursor: pointer;
+    height: 27px;
+    background: #cecece;
+    display: flex;
+    align-items: center;
+    padding: 0 9px;
+    gap: 8px;
+    font-size: 9px;
+}
+
+.reservation-day summary::-webkit-details-marker {
+    display: none;
+}
+
+.reservation-day summary::before {
+    content: "⌄";
+    font-size: 13px;
+    width: 9px;
+    color: #444;
+}
+
+.reservation-day:not([open]) summary::before {
+    content: "›";
+}
+
+.day-name {
+    font-weight: bold;
+}
+
+.day-count {
+    color: #777;
+    font-size: 8px;
+    margin-left: 2px;
+}
+
+.day-summary {
+    margin-left: auto;
+    color: #777;
+    font-size: 8px;
+}
+
+.add-summary {
+    margin-left: auto;
+    font-size: 9px;
+}
+
+.reservation-content {
+    padding: 9px 9px 8px;
+    background: #d9d9d9;
+}
+
+.reservation-grid {
+    display: grid;
+    grid-template-columns: 94px 94px minmax(100px, 1fr) 32px;
+    gap: 7px;
+    align-items: end;
+}
+
+.reservation-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.reservation-field label {
+    font-size: 8px;
+}
+
+.reservation-field .fake-input {
+    height: 21px;
+    padding: 4px 7px;
+}
+
+.delete-button {
+    width: 32px;
+    height: 21px;
+    border: 1px solid #bdbdbd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 13px;
+}
+
+.add-reservation {
+    margin-top: 7px;
+    font-size: 9px;
+    color: #555;
+}
+
+.weekly-note {
+    border-top: 1px solid #c4c4c4;
+    margin-top: 11px;
+    padding-top: 11px;
+    font-size: 8px;
+    color: #777;
+}
+
+.preview-column {
+    min-width: 0;
+}
+
+.preview-heading {
+    font-size: 9px;
+    margin: 3px 0 7px;
+}
+
+.preview-box {
+    background: #414141;
+    color: #eee;
+    padding: 12px;
+    margin-bottom: 22px;
+}
+
+.preview-label {
+    font-size: 8px;
+    color: #bbb;
+    margin-bottom: 16px;
+}
+
+.preview-name {
+    font-size: 13px;
+    margin-bottom: 9px;
+}
+
+.preview-email {
+    font-size: 8px;
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+.preview-role {
+    font-size: 8px;
+    margin-bottom: 16px;
+}
+
+.preview-divider {
+    border-top: 1px solid #666;
+    margin-bottom: 12px;
+}
+
+.preview-section-title {
+    font-size: 9px;
+    margin-bottom: 10px;
+}
+
+.preview-stats {
+    font-size: 8px;
+    margin-bottom: 13px;
+}
+
+.preview-schedule {
+    display: grid;
+    grid-template-columns: 32px 1fr;
+    gap: 8px;
+    font-size: 8px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.preview-day {
+    font-weight: bold;
+}
+
+.preview-footer {
+    border-top: 1px solid #666;
+    padding-top: 12px;
+    margin-top: 10px;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+.info-block {
+    margin-bottom: 20px;
+}
+
+.info-block h3 {
+    font-size: 10px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.info-block p {
+    font-size: 9px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.info-divider {
+    border-top: 1px solid #c0c0c0;
+    margin: 18px 0;
+}
+
+.bottom-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.bottom-note {
+    font-size: 8px;
+    color: #777;
+}
+
+.buttons {
+    display: flex;
+    gap: 7px;
+}
+
+.button {
+    height: 25px;
+    padding: 0 17px;
+    border: 1px solid #bcbcbc;
+    background: #d9d9d9;
+    color: #444;
+    font-family: inherit;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+}
+
+.button.primary {
+    background: #414141;
+    color: #eee;
+    border-color: #414141;
+}
+
+@media (max-width: 760px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-column {
+        margin-top: 5px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .reservation-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reservation-field:nth-child(3) {
+        grid-column: 1 / 2;
+    }
+
+    .delete-button {
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: end;
+    }
+
+    .bottom-actions {
+        align-items: flex-start;
+        gap: 15px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+    .main {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .page-header h1 {
+        font-size: 14px;
+    }
+
+    .back-link {
+        font-size: 8px;
+    }
+
+    .reservation-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+body {
+    background: #dcdcdc;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding-top: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    margin-left: 41px;
+    padding: 24px 32px;
+    background-color: #d8d8d8;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.main-content .breadcrumb {
+    font-size: 12px;
+}

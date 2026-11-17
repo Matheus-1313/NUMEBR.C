@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Ensallum</title>
+
+    <link rel="stylesheet" href="login.css">
+</head>
+<body class="login-page">
+
+    <div class="login-container">
+
+        <h2>ENSALLUM<span>.</span></h2>
+
+        <div class="login-box">
+
+            <p class="subtitulo">ACESSO À PLATAFORMA</p>
+
+            <h1>Bem-vindo!</h1>
+
+            <p class="descricao">
+                Entre com sua conta para acessar o sistema de ensalamento.
+            </p>
+
+            <form th:action="@{/login}" method="post">
+
+                <label for="email">E-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+                <label for="senha">Senha</label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite sua senha"
+                    required
+                >
+
+                <div class="botoes-login">
+
+                    <button type="submit" class="btn-entrar">
+                        Entrar →
+                    </button>
+
+                    <a href="../menu/index.html" class="btn-visitante">
+                        Visitante
+                    </a>
+
+                </div>
+
+            </form>
+
+            <p class="rodape">
+                Sistema de ensalamento - CEFET-MG
+            </p>
+
+        </div>
+
+        <p class="creditos">ENSALLUM / CEFET-MG</p>
+
+    </div>
+
+</body>
+</html>

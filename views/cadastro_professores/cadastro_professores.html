@@ -1,0 +1,496 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../menu/menu.css">
+<link rel="stylesheet" href="cadastro_professores.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<title>Ensalum - Cadastrar Professor</title>
+</head>
+
+<body>
+
+  <header class="cabecalho">
+    <div class="nome-projeto">Ensalum</div>
+    <div class="pagina-atual">· Administração </div>
+
+    <div class="perfil-professor" aria-label="Perfil do professor">
+      <div class="foto-professor" aria-hidden="true">ADM</div>
+      <span class="nome-professor">Administração</span>
+    </div>
+  </header>
+
+  <aside class="sidebar" aria-label="Menu lateral">
+    <a class="link-sidebar menu-ativado" href="../menu/index.html" aria-label="Menu principal" title="Menu principal">
+      <span class="sidebar-icon" aria-hidden="true">☰</span>
+      <span class="sidebar-label">Menu</span>
+    </a>
+
+    <a class="link-sidebar" href="../cadastro_sala/cadastro_sala.html" aria-label="Cadastro de salas" title="Cadastro de salas">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 20h14M7 20V5l10-2v17M10 8h1m3-1h1m-5 5h1m3-1h1m-4 9v-5h3v5"/>
+      </svg>
+      <span class="sidebar-label">Cadastro de salas</span>
+    </a>
+
+    <a class="link-sidebar" href="../cadastro_recursos/cadastro_recursos.html" aria-label="Cadastro de recursos" title="Cadastro de recursos">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="12" rx="1"/>
+        <path d="M8 20h8M12 16v4M8 9h8M8 12h5"/>
+      </svg>
+      <span class="sidebar-label">Cadastro de recursos</span>
+    </a>
+
+    <a class="link-sidebar ativado" href="cadastro_professores.html" aria-label="Cadastro de professores" title="Cadastro de professores">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="9" cy="8" r="3"/>
+        <path d="M3.5 19c.5-3 2.5-4.5 5.5-4.5s5 1.5 5.5 4.5M18 8v6m-3-3h6"/>
+      </svg>
+      <span class="sidebar-label">Cadastro de professores</span>
+    </a>
+
+    <div class="sidebar-bottom">
+      <a class="link-sidebar" href="#" aria-label="Perfil" title="Perfil">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="3.2"/>
+          <path d="M5.5 20c.5-3.5 2.8-5.5 6.5-5.5s6 2 6.5 5.5"/>
+        </svg>
+        <span class="sidebar-label">Sair</span>
+      </a>
+    </div>
+  </aside>
+
+<main class="main-content">
+
+    <div class="breadcrumb">
+        Administração / Novo Professor
+    </div>
+
+    <div class="page-header">
+        <h1>Cadastrar professor</h1>
+    </div>
+
+    <p class="subtitle">
+        Informe os dados de acesso e defina as reservas semanais padrão do professor.
+    </p>
+
+    <div class="breadcrumb">
+        Administração / Novo professor
+    </div>
+
+    <div class="content-grid">
+
+        <section>
+
+            <div class="section-card">
+
+                <div class="section-title">
+                    <span>Dados do professor</span>
+                    <span class="required-info">* Campos obrigatórios</span>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="field full-width">
+                        <label>Nome completo *</label>
+                        <div class="fake-input">
+                            Mariana Oliveira Santos
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>E-mail *</label>
+                        <div class="fake-input">
+                            mariana.santos@instituicao.edu.br
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>Senha *</label>
+                        <div class="fake-input">
+                            <span>••••••••••</span>
+                            <span>◉</span>
+                        </div>
+                        <span class="field-note">
+                            Mínimo de 8 caracteres.
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section-card reservations-card">
+
+                <div class="section-title">
+                    <span>Reservas semanais padrão</span>
+                    <span class="required-info">4 reservas / semana</span>
+                </div>
+
+                <p class="reservations-description">
+                    Defina os horários e as salas que se repetem a cada semana.<br>
+                    Um dia pode ter várias reservas. Adicione cada horário separadamente.
+                </p>
+
+                <details class="reservation-day" open>
+                    <summary>
+                        <span class="day-name">Segunda-feira</span>
+                        <span class="day-count">2 reservas</span>
+                    </summary>
+
+                    <div class="reservation-content">
+
+                        <div class="reservation-grid">
+
+                            <div class="reservation-field">
+                                <label>Início *</label>
+                                <div class="fake-input">08:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Término *</label>
+                                <div class="fake-input">10:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Sala *</label>
+                                <div class="fake-input">Sala 101 <span>⌄</span></div>
+                            </div>
+
+                            <div class="delete-button">▤</div>
+
+                            <div class="reservation-field">
+                                <div class="fake-input">10:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <div class="fake-input">12:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <div class="fake-input">Laboratório 02 <span>⌄</span></div>
+                            </div>
+
+                            <div class="delete-button">▤</div>
+
+                        </div>
+
+                        <div class="add-reservation">
+                            + Adicionar reserva
+                        </div>
+
+                    </div>
+                </details>
+
+                <details class="reservation-day">
+                    <summary>
+                        <span class="day-name">Terça-feira</span>
+                        <span class="day-summary">Sem reservas</span>
+                        <span class="add-summary">+ Adicionar reserva</span>
+                    </summary>
+
+                    <div class="reservation-content">
+                        <div class="reservation-grid">
+
+                            <div class="reservation-field">
+                                <label>Início *</label>
+                                <div class="fake-input">08:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Término *</label>
+                                <div class="fake-input">10:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Sala *</label>
+                                <div class="fake-input">Sala 101 <span>⌄</span></div>
+                            </div>
+
+                            <div class="delete-button">▤</div>
+
+                        </div>
+                    </div>
+                </details>
+
+                <details class="reservation-day" open>
+                    <summary>
+                        <span class="day-name">Quarta-feira</span>
+                        <span class="day-count">1 reserva</span>
+                    </summary>
+
+                    <div class="reservation-content">
+
+                        <div class="reservation-grid">
+
+                            <div class="reservation-field">
+                                <label>Início *</label>
+                                <div class="fake-input">14:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Término *</label>
+                                <div class="fake-input">16:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Sala *</label>
+                                <div class="fake-input">Sala 203 <span>⌄</span></div>
+                            </div>
+
+                            <div class="delete-button">▤</div>
+
+                        </div>
+
+                        <div class="add-reservation">
+                            + Adicionar reserva
+                        </div>
+
+                    </div>
+                </details>
+
+                <details class="reservation-day">
+                    <summary>
+                        <span class="day-name">Quinta-feira</span>
+                        <span class="day-summary">Sem reservas</span>
+                        <span class="add-summary">+ Adicionar reserva</span>
+                    </summary>
+
+                    <div class="reservation-content">
+                        <div class="reservation-grid">
+
+                            <div class="reservation-field">
+                                <label>Início *</label>
+                                <div class="fake-input">08:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Término *</label>
+                                <div class="fake-input">10:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Sala *</label>
+                                <div class="fake-input">Sala 101 <span>⌄</span></div>
+                            </div>
+
+                            <div class="delete-button">▤</div>
+
+                        </div>
+                    </div>
+                </details>
+
+                <details class="reservation-day">
+                    <summary>
+                        <span class="day-name">Sexta-feira</span>
+                        <span class="day-count">1 reserva</span>
+                        <span class="day-summary">08:00-10:00 · Sala 101</span>
+                    </summary>
+
+                    <div class="reservation-content">
+                        <div class="reservation-grid">
+
+                            <div class="reservation-field">
+                                <label>Início *</label>
+                                <div class="fake-input">08:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Término *</label>
+                                <div class="fake-input">10:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Sala *</label>
+                                <div class="fake-input">Sala 101 <span>⌄</span></div>
+                            </div>
+
+                            <div class="delete-button">▤</div>
+
+                        </div>
+                    </div>
+                </details>
+
+                <details class="reservation-day">
+                    <summary>
+                        <span class="day-name">Sábado</span>
+                        <span class="day-summary">Sem reservas</span>
+                        <span class="add-summary">+ Adicionar reserva</span>
+                    </summary>
+
+                    <div class="reservation-content">
+                        <div class="reservation-grid">
+
+                            <div class="reservation-field">
+                                <label>Início *</label>
+                                <div class="fake-input">08:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Término *</label>
+                                <div class="fake-input">10:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Sala *</label>
+                                <div class="fake-input">Sala 101 <span>⌄</span></div>
+                            </div>
+
+                            <div class="delete-button">▤</div>
+
+                        </div>
+                    </div>
+                </details>
+
+                <details class="reservation-day">
+                    <summary>
+                        <span class="day-name">Domingo</span>
+                        <span class="day-summary">Sem reservas</span>
+                        <span class="add-summary">+ Adicionar reserva</span>
+                    </summary>
+
+                    <div class="reservation-content">
+                        <div class="reservation-grid">
+
+                            <div class="reservation-field">
+                                <label>Início *</label>
+                                <div class="fake-input">08:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Término *</label>
+                                <div class="fake-input">10:00 <span>◷</span></div>
+                            </div>
+
+                            <div class="reservation-field">
+                                <label>Sala *</label>
+                                <div class="fake-input">Sala 101 <span>⌄</span></div>
+                            </div>
+
+                            <div class="delete-button">▤</div>
+
+                        </div>
+                    </div>
+                </details>
+
+                <div class="weekly-note">
+                    Recorrência semanal · As reservas serão vinculadas a este professor.
+                </div>
+
+            </div>
+
+            <div class="bottom-actions">
+
+                <span class="bottom-note">
+                    Confira os dados antes de cadastrar.
+                </span>
+
+                <div class="buttons">
+                    <div class="button">Cancelar</div>
+                    <div class="button primary">
+                        Cadastrar professor →
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <aside class="preview-column">
+
+            <div class="preview-heading">
+                Prévia do professor
+            </div>
+
+            <div class="preview-box">
+
+                <div class="preview-label">
+                    [ Prévia ]
+                </div>
+
+                <div class="preview-name">
+                    Mariana Oliveira Santos
+                </div>
+
+                <div class="preview-email">
+                    mariana.santos@instituicao.edu.br
+                </div>
+
+                <div class="preview-role">
+                    · Professor
+                </div>
+
+                <div class="preview-divider"></div>
+
+                <div class="preview-section-title">
+                    Reservas semanais padrão
+                </div>
+
+                <div class="preview-stats">
+                    4 reservas · 3 dias · 8h por semana
+                </div>
+
+                <div class="preview-schedule">
+
+                    <div class="preview-day">SEG</div>
+                    <div>
+                        08:00-10:00 · Sala 101<br>
+                        10:00-12:00 · Laboratório 02
+                    </div>
+
+                    <div class="preview-day">QUA</div>
+                    <div>14:00-16:00 · Sala 203</div>
+
+                    <div class="preview-day">SEX</div>
+                    <div>08:00-10:00 · Sala 101</div>
+
+                </div>
+
+                <div class="preview-footer">
+                    O acesso será criado ao confirmar o cadastro.
+                </div>
+
+            </div>
+
+            <div class="info-block">
+
+                <h3>Antes de cadastrar</h3>
+
+                <p>
+                    As reservas padrão se repetem toda semana,
+                    nos dias, horários e salas informados.
+                </p>
+
+            </div>
+
+            <div class="info-divider"></div>
+
+            <div class="info-block">
+
+                <h3>Evite sobreposição de horários</h3>
+
+                <p>
+                    Um professor não pode ter duas reservas
+                    no mesmo horário. Confira também a
+                    disponibilidade de cada sala.
+                </p>
+
+            </div>
+
+            <div class="info-block" style="margin-top: 25px">
+
+                <p>
+                    A prévia reflete os dados preenchidos ao lado.
+                </p>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</main>
+
+</body>
+</html>

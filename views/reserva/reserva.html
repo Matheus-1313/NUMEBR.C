@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensalum - Nova reserva</title>
+    <link rel="stylesheet" href="../menu/menu.css">
+    <link rel="stylesheet" href="reserva.css">
+
+</head>
+
+<body>
+
+  <header class="cabecalho">
+    <div class="nome-projeto">Ensalum</div>
+    <div class="pagina-atual">· Nova reserva</div>
+    <div class="perfil-professor" aria-label="Perfil do professor">
+      <div class="foto-professor" aria-hidden="true">WGS</div>
+      <span class="nome-professor">Prof. William Geraldo Sallum</span>
+    </div>
+  </header>
+
+<aside class="sidebar" aria-label="Menu lateral">
+  <a class="link-sidebar menu-ativado" href="../menu/index.html" aria-label="Menu principal" title="Menu principal"><span class="sidebar-icon" aria-hidden="true">☰</span><span class="sidebar-label">Menu</span></a>
+  <a class="link-sidebar" href="../menu/index.html" aria-label="Salas" title="Salas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14M7 20V5l10-2v17M10 8h1m3-1h1m-5 5h1m3-1h1m-4 9v-5h3v5"/></svg><span class="sidebar-label">Salas</span></a>
+  <a class="link-sidebar" href="../busca/busca.html" aria-label="Busca de salas" title="Busca de salas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span class="sidebar-label">Busca de salas</span></a>
+  <a class="link-sidebar" href="../agenda/agenda.html" aria-label="Minha Agenda" title="Minha Agenda"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M8 3v4m8-4v4M4 9h16M8 12h2m4 0h2m-8 4h2m4 0h2"/></svg><span class="sidebar-label">Minha Agenda</span></a>
+  <a class="link-sidebar ativado" href="../reserva/reserva.html" aria-label="Nova reserva" title="Nova reserva"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 3v4m8-4v4M4 9h16M8 13h3m2 0h3"/></svg><span class="sidebar-label">Nova reserva</span></a>
+  <div class="sidebar-bottom">
+    <a class="link-sidebar" href="#" aria-label="Ajuda" title="Ajuda"><span class="sidebar-icon" aria-hidden="true">?</span><span class="sidebar-label">Ajuda</span></a>
+    <a class="link-sidebar" href="#" aria-label="Perfil" title="Perfil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20c.5-3.5 2.8-5.5 6.5-5.5s6 2 6.5 5.5"/></svg><span class="sidebar-label">Perfil</span></a>
+  </div>
+</aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content reserva-main">
+
+        <div class="breadcrumb">
+            Salas <span>/</span> Nova reserva
+        </div>
+
+        <h1 class="page-title">Nova reserva</h1>
+
+        <p class="page-description">
+            Preencha os dados abaixo para reservar uma sala.
+        </p>
+
+        <div class="content">
+
+            <!-- FORMULÁRIO -->
+            <section class="reservation-form">
+
+                <div class="form-header">
+                    <h2>Dados da reserva</h2>
+                    <p>Todos os campos são obrigatórios.</p>
+                </div>
+
+                <form>
+
+                    <!-- DESCRIÇÃO -->
+                    <div class="form-group">
+                        <label>
+                            Descrição <span class="required">*</span>
+                        </label>
+
+                        <textarea
+                            placeholder="Ex.: Reunião de planejamento da equipe"
+                        ></textarea>
+
+                        <span class="field-description">
+                            Informe o objetivo ou o título da sua reserva.
+                        </span>
+                    </div>
+
+                    <!-- SALA -->
+                    <div class="form-group">
+                        <label>
+                            Sala <span class="required">*</span>
+                        </label>
+
+                        <select>
+                            <option value="" selected disabled>
+                                Selecione uma sala
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- DATA E HORÁRIO -->
+                    <div class="date-time">
+
+                        <div class="form-group">
+                            <label>
+                                Data <span class="required">*</span>
+                            </label>
+
+                            <input type="text" placeholder="dd/mm/aaaa">
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                Horário de início <span class="required">*</span>
+                            </label>
+
+                            <select name="horario_inicio" required>
+                                <option value="" selected disabled>Selecione um horário</option>
+                                <option value="08:00">08:00 - 09:00</option>
+                                <option value="09:00">09:00 - 10:00</option>
+                                <option value="10:00">10:00 - 11:00</option>
+                                <option value="11:00">11:00 - 12:00</option>
+                                <option value="12:00">12:00 - 13:00</option>
+                                <option value="13:00">13:00 - 14:00</option>
+                                <option value="14:00">14:00 - 15:00</option>
+                                <option value="15:00">15:00 - 16:00</option>
+                                <option value="16:00">16:00 - 17:00</option>
+                                <option value="17:00">17:00 - 18:00</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- BOTÕES -->
+                    <div class="form-footer">
+                        <button type="button">
+                            Cancelar
+                        </button>
+
+                        <button type="submit" class="submit-button">
+                            Reservar sala <span>→</span>
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <!-- PAINEL INFORMATIVO -->
+            <aside class="info-panel">
+
+                <div class="panel-tag">[ Nova reserva ]</div>
+
+                <h2>Antes de reservar</h2>
+
+                <div class="step">
+                    <span class="step-number">01</span>
+
+                    <div class="step-content">
+                        <h3>Escolha a sala</h3>
+                        <p>
+                            Selecione o espaço que deseja utilizar.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">02</span>
+
+                    <div class="step-content">
+                        <h3>Defina a data e o início</h3>
+                        <p>
+                            A disponibilidade será verificada ao
+                            solicitar a reserva.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">03</span>
+
+                    <div class="step-content">
+                        <h3>Revise e reserve</h3>
+                        <p>
+                            Confira os dados antes de continuar.
+                        </p>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+</body>
+</html>

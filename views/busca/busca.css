@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --cabecalho: #454545;
+  --sidebar: #454545;
+  --page: #d8d8d8;
+  --card: #484848;
+  --text: #3f3f3f;
+  --muted: #777;
+  --line: #bdbdbd;
+  --white: #f2f2f2;
+  --font: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding-top: 60px;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.cabecalho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px 14px 8px;
+  background: var(--cabecalho);
+  color: var(--white);
+}
+
+.nome-projeto {
+  font-size: 17px;
+  line-height: 21px;
+  font-weight: 600;
+  letter-spacing: .2px;
+}
+
+.pagina-atual {
+  margin-top: 3px;
+  padding-left: 4px;
+  color: #c5c5c5;
+  font-size: 10px;
+}
+
+.perfil-professor {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 45%;
+  color: var(--white);
+}
+
+.foto-professor {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #777;
+  background: #505050;
+  color: #e6e6e6;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: .3px;
+}
+
+.nome-professor {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  color: #e0e0e0;
+}
+
+.sidebar {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 41px;
+  height: calc(100vh - 60px);
+  height: calc(100dvh - 60px);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  padding-inline: 4px;
+  padding-top: 11px;
+  background: var(--sidebar);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: width .2s ease;
+}
+
+.sidebar:hover,
+.sidebar:focus-within { width: 165px; }
+
+.link-sidebar {
+  width: 100%;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding-left: 10px;
+  color: #e3e3e3;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  border-radius: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar:not(:hover):not(:focus-within) .link-sidebar {
+  justify-content: center;
+  gap: 0;
+  padding-left: 0;
+}
+
+.link-sidebar svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar-icon {
+  width: 17px;
+  display: inline-flex;
+  justify-content: center;
+  flex: 0 0 17px;
+}
+
+.sidebar-label {
+  max-width: 120px;
+  opacity: 0;
+  transform: translateX(-6px);
+  overflow: hidden;
+  transition: opacity .14s ease, transform .2s ease, max-width .2s ease;
+  font-family: var(--font);
+  font-size: 9px;
+  letter-spacing: .15px;
+  pointer-events: none;
+}
+
+.sidebar:not(:hover):not(:focus-within) .sidebar-label {
+  max-width: 0;
+}
+
+.sidebar:hover .sidebar-label,
+.sidebar:focus-within .sidebar-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.link-sidebar.ativado { background: #5b5b5b; }
+.menu-ativado { font-size: 17px; margin-bottom: 5px; }
+
+.sidebar-bottom {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-bottom: 10px;
+}
+
+.sidebar-bottom .link-sidebar { font-size: 15px; }
+
+/* ===================================================================
+   Conteúdo da página: Busca de salas
+   =================================================================== */
+
+.main-content {
+  margin-left: 41px;
+  padding: 24px 24px 30px 23px;
+  min-height: calc(100vh - 60px);
+}
+
+.busca-titulo h1 {
+  margin: 0;
+  font-size: clamp(22px, 2.4vw, 27px);
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: .2px;
+}
+
+.subtitulo {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ---------- Filtros ---------- */
+
+.filtros-busca { margin-top: 20px; }
+
+.filtros-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1fr 1.65fr 3.05fr;
+  gap: 12px;
+}
+
+.grupo-filtro {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.rotulo {
+  color: #444;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.controle {
+  position: relative;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  border: 1px solid #c1c1c1;
+  background: #dcdcdc;
+  color: #444;
+  font-size: 11px;
+}
+
+.controle input,
+.controle select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 0 34px 0 10px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #444;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+/* O seletor de data nativo cobre o campo inteiro (o ícone fica por baixo) */
+.controle input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.controle:has(:focus-visible),
+.filtro-recursos:has(summary:focus-visible) {
+  outline: 2px solid #555;
+  outline-offset: 1px;
+}
+
+.icone-controle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: #666;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+/* Recursos (details/summary, mesmo padrão do menu principal) */
+
+.filtro-recursos {
+  position: relative;
+  height: 38px;
+  min-width: 0;
+  border: 1px solid #c1c1c1;
+  background: #dcdcdc;
+  color: #444;
+  font-size: 11px;
+}
+
+.filtro-recursos summary {
+  height: 100%;
+  padding: 0 34px 0 10px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filtro-recursos summary::-webkit-details-marker { display: none; }
+
+.filtro-recursos[open] summary { background: #e5e5e5; }
+
+.filtro-recursos[open] .icone-controle {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.opcoes-recursos {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 3px);
+  left: -1px;
+  right: -1px;
+  padding: 10px 12px;
+  border: 1px solid #aaa;
+  background: #e2e2e2;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 12%);
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.opcoes-recursos label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 20px;
+  cursor: pointer;
+}
+
+.opcoes-recursos input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: #454545;
+  cursor: pointer;
+}
+
+/* ---------- Disponibilidade + ações ---------- */
+
+.filtros-acoes {
+  margin-top: 18px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 22px;
+}
+
+.grupo-disponibilidade {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.segmentado {
+  position: relative;
+  display: inline-flex;
+  height: 40px;
+  border: 1px solid #c1c1c1;
+  background: #dcdcdc;
+}
+
+.segmentado input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.segmentado label {
+  display: flex;
+  align-items: center;
+  padding: 0 19px;
+  color: #444;
+  font-size: 11px;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+.segmentado input:checked + label {
+  background: var(--card);
+  color: var(--white);
+}
+
+.segmentado input:checked + label::before {
+  content: "●";
+  margin-right: 7px;
+  font-size: 8px;
+}
+
+.segmentado input:focus-visible + label {
+  outline: 2px solid #f2f2f2;
+  outline-offset: -4px;
+}
+
+.acoes-busca {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.limpar-filtros {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #333;
+  font: inherit;
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.botao-busca {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  height: 40px;
+  min-width: 152px;
+  padding: 0 20px;
+  border: 0;
+  background: var(--card);
+  color: var(--white);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao-busca:hover { background: #333; }
+
+.botao-busca svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.divisor {
+  margin: 20px 0 18px;
+  border: 0;
+  border-top: 1px solid #c4c4c4;
+}
+
+/* ---------- Resultados ---------- */
+
+.resultados-topo,
+.resultados-sub {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.resultados-topo h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.contagem-salas {
+  color: #777;
+  font-size: 10px;
+}
+
+.resultados-sub { margin-top: 9px; }
+
+.resumo-busca {
+  margin: 0;
+  color: #444;
+  font-size: 11px;
+}
+
+.room-grid {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.room-card {
+  min-height: 205px;
+  padding: 14px 16px;
+  background: var(--card);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.card-topo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 11px;
+  color: #d1d1d1;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.room-card h3 {
+  margin: 0 0 2px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.room-location,
+.capacity,
+.resources,
+.periodo {
+  margin: 0;
+  color: #e2e2e2;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.capacity { margin-top: 9px; }
+.periodo { margin: 7px 0 14px; }
+
+.botao-reserva {
+  width: 100%;
+  min-height: 34px;
+  margin-top: auto;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #666;
+  color: #f2f2f2;
+  font-size: 10px;
+  font-weight: 600;
+  transition: background .15s ease;
+}
+
+.botao-reserva span {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+a.botao-reserva:hover { background: #5a5a5a; }
+
+.botao-reserva.indisponivel {
+  border-color: #5c5c5c;
+  color: #9b9b9b;
+  font-weight: 400;
+  cursor: not-allowed;
+}
+
+.nota-resultados {
+  margin: 12px 0 0;
+  color: #777;
+  font-size: 10px;
+}
+
+/* ---------- Acessibilidade ---------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.link-sidebar:focus-visible,
+.botao-reserva:focus-visible,
+.botao-busca:focus-visible,
+.limpar-filtros:focus-visible {
+  outline: 2px solid #f2f2f2;
+  outline-offset: 2px;
+}
+
+.limpar-filtros:focus-visible { outline-color: #555; }
+
+.opcoes-recursos input:focus-visible {
+  outline: 2px solid #555;
+  outline-offset: 2px;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (min-width: 1100px) {
+  .main-content { padding-right: 32px; padding-left: 23px; }
+}
+
+@media (max-width: 1100px) {
+  .filtros-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grupo-recursos { grid-column: span 2; }
+  .room-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 900px) {
+  .sidebar:hover,
+  .sidebar:focus-within { width: 41px; }
+  .sidebar .link-sidebar {
+    justify-content: center;
+    gap: 0;
+    padding-left: 0;
+  }
+  .sidebar .sidebar-label {
+    max-width: 0;
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+}
+
+@media (max-width: 700px) {
+  .main-content { padding: 22px 14px 24px; }
+  .filtros-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grupo-recursos { grid-column: 1 / -1; }
+  .controle,
+  .filtro-recursos { height: 40px; }
+  .filtros-acoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .segmentado { display: flex; }
+  .segmentado label {
+    flex: 1;
+    justify-content: center;
+    padding: 0 8px;
+  }
+  .acoes-busca { justify-content: space-between; }
+  .botao-busca { flex: 1; }
+  .room-grid { grid-template-columns: 1fr; }
+  .room-card { min-height: 190px; }
+  .botao-reserva { min-height: 36px; }
+}
+
+@media (max-width: 420px) {
+  body { padding-top: 58px; }
+  .cabecalho { height: 58px; }
+  .nome-projeto { font-size: 15px; }
+  .pagina-atual { font-size: 9px; }
+  .perfil-professor {
+    right: 9px;
+    gap: 6px;
+    max-width: 52%;
+  }
+  .foto-professor {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+  }
+  .nome-professor { font-size: 9px; }
+  .sidebar {
+    top: 58px;
+    width: 36px;
+    height: calc(100vh - 58px);
+    height: calc(100dvh - 58px);
+  }
+  .sidebar:hover,
+  .sidebar:focus-within { width: 36px; }
+  .main-content { margin-left: 36px; padding: 19px 10px; }
+  .subtitulo { font-size: 12px; }
+  .filtros-grid { grid-template-columns: 1fr; }
+  .segmentado label { font-size: 10px; padding: 0 4px; }
+  .segmentado input:checked + label::before { margin-right: 4px; }
+}

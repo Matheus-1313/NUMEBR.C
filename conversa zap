@@ -1,0 +1,23 @@
+Ah, esse foi eu quem criou
+ela nem existia antes da logica de login começar a ser feita
+foi só nela q c mexeu?
+Não, eu criei services e controllers pro login, e mexi em alguns ja existentes
+vc conseguiria listar?
+pq se n der pra dar merge natural, vai ter que ser manual
+Yes vou mandar aqui
+jae
+Das services - criei AutenicacaoService, criei LoginService, mudei em ProfessorService, criei TokenService
+Em model eu criei a FuncaoEnum e coloquei no ProfessorEntity pra ele ter uma variavel desse tipo
+Criei dois Dto's, LoginResponse e LoginRequest
+@JavaLógico, o que a gente fez junto ontem tá na sua branch ou na main?
+Nos controllers, criei o LoginController e alterei as rotas nos outros pra bater com a permissao do usuario
+Ah, e também criei um js pra manter o login
+foi tudo?
+@JavaLógico, o que a gente fez junto ontem tá na sua branch ou na main?
+Acho que tá na minha
+Acho que tá na minha
+jae
+Sim, contando com a pasta config teve essa adição no application.yaml
+ok
+vou bandecar e começar a integrar o front com o back ent
+Muito bem javali, boa sorte

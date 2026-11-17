@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administração | Ensalum</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <aside class="menu">
+
+            <div class="logo">
+                <span class="logo-letra">E.</span>
+
+                <div>
+                    <h2>ENSALUM</h2>
+                    <p>PAINEL ADMINISTRATIVO</p>
+                </div>
+            </div>
+
+            <p class="titulo-menu">MENU PRINCIPAL</p>
+
+            <nav>
+                <a href="#inicio" class="ativo">Visão geral</a>
+                <a href="#salas">Salas</a>
+                <a href="#professores">Professores</a>
+                <a href="#recursos">Recursos</a>
+                <a href="#reservas">Reservas</a>
+            </nav>
+
+            <div class="usuario">
+                <div class="avatar">AD</div>
+
+                <div>
+                    <strong>Administrador</strong>
+                    <p>PERFIL ADMIN</p>
+                </div>
+            </div>
+
+            <a href="login.html" class="sair">↗ Sair da conta</a>
+
+        </aside>
+
+        <main class="conteudo">
+
+            <header class="topo">
+                <p>ENSALUM / <strong>VISÃO GERAL</strong></p>
+                <span>SISTEMA DE SALAS</span>
+            </header>
+
+            <section id="inicio">
+
+                <div class="cabecalho-pagina">
+                    <div>
+                        <p class="subtitulo">ÁREA ADMINISTRATIVA / 001</p>
+
+                        <h1>Painel geral<span>.</span></h1>
+
+                        <p class="descricao">
+                            Acompanhe os dados do sistema de salas.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="cartoes">
+
+                    <article class="cartao">
+                        <p>SALAS CADASTRADAS</p>
+                        <h2>08</h2>
+                        <span>Espaços registrados</span>
+                    </article>
+
+                    <article class="cartao">
+                        <p>PROFESSORES</p>
+                        <h2>12</h2>
+                        <span>Contas cadastradas</span>
+                    </article>
+
+                    <article class="cartao">
+                        <p>RESERVAS ATIVAS</p>
+                        <h2>06</h2>
+                        <span>Reservas registradas</span>
+                    </article>
+
+                    <article class="cartao">
+                        <p>DISPONIBILIDADE</p>
+                        <h2>75%</h2>
+                        <span>Indicador ilustrativo</span>
+                    </article>
+
+                </div>
+
+                <section class="painel">
+
+                    <div class="titulo-painel">
+                        <div>
+                            <p class="subtitulo">ACOMPANHAMENTO</p>
+                            <h2>Reservas recentes</h2>
+                        </div>
+
+                        <a href="#reservas" id="ver-todas">Ver todas ↗</a>
+                    </div>
+
+                    <div class="tabela-responsiva">
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>SALA</th>
+                                    <th>PROFESSOR</th>
+                                    <th>DATA</th>
+                                    <th>HORÁRIO</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Sala 204</td>
+                                    <td>Mariana Costa</td>
+                                    <td>23/10/2026</td>
+                                    <td>08:00–09:40</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sala 108</td>
+                                    <td>Rafael Mendes</td>
+                                    <td>23/10/2026</td>
+                                    <td>10:00–11:40</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Auditório 01</td>
+                                    <td>Camila Rocha</td>
+                                    <td>24/10/2026</td>
+                                    <td>14:00–15:40</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sala 302</td>
+                                    <td>Lucas Almeida</td>
+                                    <td>24/10/2026</td>
+                                    <td>16:00–17:40</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </section>
+
+            </section>
+
+            <section id="salas" class="secao-lista">
+
+                <div class="cabecalho-pagina">
+                    <div>
+                        <p class="subtitulo">GERENCIAMENTO / 002</p>
+                        <h1>Salas<span>.</span></h1>
+
+                        <p class="descricao">
+                            Consulte os espaços disponíveis na instituição.
+                        </p>
+                    </div>
+                </div>
+
+                <section class="painel">
+
+                    <div class="titulo-painel">
+                        <div>
+                            <p class="subtitulo">LISTA DE ESPAÇOS</p>
+                            <h2>Salas cadastradas</h2>
+                        </div>
+                        <a href="../cadastro_sala/cadastro_sala.html" class="botao">+ Cadastrar sala</a>
+                    </div>
+
+                    <div class="tabela-responsiva">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>IDENTIFICAÇÃO</th>
+                                    <th>TIPO</th>
+                                    <th>CAPACIDADE</th>
+                                    <th>RECURSOS</th>
+                                    <th class="coluna-acao">AÇÃO</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Sala 108</td>
+                                    <td>Sala comum</td>
+                                    <td>35 pessoas</td>
+                                    <td>Projetor e quadro</td>
+                                    <td class="celula-acao"><a href="../editar_sala/editar_sala.html" class="botao-editar">Editar sala</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sala 204</td>
+                                    <td>Laboratório</td>
+                                    <td>28 pessoas</td>
+                                    <td>Computadores</td>
+                                    <td class="celula-acao"><a href="../editar_sala/editar_sala.html" class="botao-editar">Editar sala</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sala 302</td>
+                                    <td>Sala comum</td>
+                                    <td>40 pessoas</td>
+                                    <td>Quadro e projetor</td>
+                                    <td class="celula-acao"><a href="../editar_sala/editar_sala.html" class="botao-editar">Editar sala</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Auditório 01</td>
+                                    <td>Auditório</td>
+                                    <td>120 pessoas</td>
+                                    <td>Som e microfone</td>
+                                    <td class="celula-acao"><a href="../editar_sala/editar_sala.html" class="botao-editar">Editar sala</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+            </section>
+
+            <section id="professores" class="secao-lista">
+
+                <div class="cabecalho-pagina">
+                    <div>
+                        <p class="subtitulo">GERENCIAMENTO / 003</p>
+                        <h1>Professores<span>.</span></h1>
+
+                        <p class="descricao">
+                            Lista de professores que podem reservar salas.
+                        </p>
+                    </div>
+                </div>
+
+                <section class="painel">
+
+                    <div class="titulo-painel">
+                        <div>
+                            <p class="subtitulo">CONTAS CADASTRADAS</p>
+                            <h2>Professores</h2>
+                        </div>
+                        <a href="../cadastro_professores/cadastro_professores.html" class="botao">+ Cadastrar professor</a>
+                    </div>
+
+                    <div class="tabela-responsiva">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>NOME</th>
+                                    <th>E-MAIL</th>
+                                    <th>STATUS</th>
+                                    <th class="coluna-acao">AÇÃO</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Mariana Costa</td>
+                                    <td>mariana@cefet.br</td>
+                                    <td><span class="status">Ativo</span></td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Desativar</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Rafael Mendes</td>
+                                    <td>rafael@cefet.br</td>
+                                    <td><span class="status">Ativo</span></td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Desativar</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Camila Rocha</td>
+                                    <td>camila@cefet.br</td>
+                                    <td><span class="status desativado">Desativado</span></td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Ativar</button></td>
+                                </tr>
+
+                                <tr>
+                                    <td>Lucas Almeida</td>
+                                    <td>lucas@cefet.br</td>
+                                    <td><span class="status">Ativo</span></td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Desativar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+            </section>
+
+            <section id="recursos" class="secao-lista">
+
+                <div class="cabecalho-pagina">
+                    <div>
+                        <p class="subtitulo">GERENCIAMENTO / 004</p>
+                        <h1>Recursos<span>.</span></h1>
+
+                        <p class="descricao">
+                            Consulte os recursos disponíveis para utilização nas salas.
+                        </p>
+                    </div>
+                </div>
+
+                <section class="painel">
+
+                    <div class="titulo-painel">
+                        <div>
+                            <p class="subtitulo">ITENS CADASTRADOS</p>
+                            <h2>Recursos</h2>
+                        </div>
+                        <a href="../cadastro_recursos/cadastro_recursos.html" class="botao">+ Cadastrar recurso</a>
+                    </div>
+
+                    <div class="tabela-responsiva">
+                        <table class="tabela-recursos">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NOME DO RECURSO</th>
+                                    <th>QUANTIDADE DE SALAS</th>
+                                    <th class="coluna-acao">AÇÃO</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><span class="id-recurso">001</span></td>
+                                    <td>Ar-condicionado</td>
+                                    <td>06</td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Apagar</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="id-recurso">002</span></td>
+                                    <td>Quadro branco</td>
+                                    <td>08</td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Apagar</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="id-recurso">003</span></td>
+                                    <td>Projetor</td>
+                                    <td>05</td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Apagar</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="id-recurso">004</span></td>
+                                    <td>Computador</td>
+                                    <td>02</td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Apagar</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="id-recurso">005</span></td>
+                                    <td>Caixa de som</td>
+                                    <td>03</td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Apagar</button></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="id-recurso">006</span></td>
+                                    <td>Microfone</td>
+                                    <td>01</td>
+                                    <td class="celula-acao"><button type="button" class="botao-acao">Apagar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+            </section>
+
+            <section id="reservas" class="secao-lista">
+
+                <div class="cabecalho-pagina">
+                    <div>
+                        <p class="subtitulo">GERENCIAMENTO / 005</p>
+                        <h1>Reservas<span>.</span></h1>
+
+                        <p class="descricao">
+                            Consulte as reservas de salas feitas pelos professores.
+                        </p>
+                    </div>
+                </div>
+
+                <section class="painel">
+
+                    <div class="titulo-painel">
+                        <div>
+                            <p class="subtitulo">REGISTROS DO SISTEMA</p>
+                            <h2>Todas as reservas</h2>
+                        </div>
+                    </div>
+
+                    <div class="tabela-responsiva">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>SALA</th>
+                                    <th>PROFESSOR</th>
+                                    <th>DATA</th>
+                                    <th>HORÁRIO</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>Sala 204</td>
+                                    <td>Mariana Costa</td>
+                                    <td>23/10/2026</td>
+                                    <td>08:00–09:40</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sala 108</td>
+                                    <td>Rafael Mendes</td>
+                                    <td>23/10/2026</td>
+                                    <td>10:00–11:40</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Auditório 01</td>
+                                    <td>Camila Rocha</td>
+                                    <td>24/10/2026</td>
+                                    <td>14:00–15:40</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Sala 302</td>
+                                    <td>Lucas Almeida</td>
+                                    <td>24/10/2026</td>
+                                    <td>16:00–17:40</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+            </section>
+
+            <footer class="rodape">
+                ENSALUM • SISTEMA DE GERENCIAMENTO DE SALAS
+            </footer>
+
+        </main>
+    </div>
+
+</body>
+</html>

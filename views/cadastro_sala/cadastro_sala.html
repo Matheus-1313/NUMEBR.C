@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ensalum | Cadastrar sala</title>
+    <link rel="stylesheet" href="../menu/menu.css">
+    <link rel="stylesheet" href="cadastro_sala.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="nome-projeto">Ensalum</div>
+    <div class="pagina-atual">· Administração </div>
+
+    <div class="perfil-professor" aria-label="Perfil do professor">
+      <div class="foto-professor" aria-hidden="true">ADM</div>
+      <span class="nome-professor">Administração</span>
+    </div>
+  </header>
+
+  <aside class="sidebar" aria-label="Menu lateral">
+    <a class="link-sidebar menu-ativado" href="../menu/index.html" aria-label="Menu principal" title="Menu principal">
+      <span class="sidebar-icon" aria-hidden="true">☰</span>
+      <span class="sidebar-label">Menu</span>
+    </a>
+
+    <a class="link-sidebar ativado" href="cadastro_sala.html" aria-label="Cadastro de salas" title="Cadastro de salas">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 20h14M7 20V5l10-2v17M10 8h1m3-1h1m-5 5h1m3-1h1m-4 9v-5h3v5"/>
+      </svg>
+      <span class="sidebar-label">Cadastro de salas</span>
+    </a>
+
+    <a class="link-sidebar" href="../cadastro_recursos/cadastro_recursos.html" aria-label="Cadastro de recursos" title="Cadastro de recursos">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect x="3" y="4" width="18" height="12" rx="1"/>
+        <path d="M8 20h8M12 16v4M8 9h8M8 12h5"/>
+      </svg>
+      <span class="sidebar-label">Cadastro de recursos</span>
+    </a>
+
+    <a class="link-sidebar" href="../cadastro_professores/cadastro_professores.html" aria-label="Cadastro de professores" title="Cadastro de professores">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="9" cy="8" r="3"/>
+        <path d="M3.5 19c.5-3 2.5-4.5 5.5-4.5s5 1.5 5.5 4.5M18 8v6m-3-3h6"/>
+      </svg>
+      <span class="sidebar-label">Cadastro de professores</span>
+    </a>
+
+    <div class="sidebar-bottom">
+      <a class="link-sidebar" href="#" aria-label="Perfil" title="Perfil">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="8" r="3.2"/>
+          <path d="M5.5 20c.5-3.5 2.8-5.5 6.5-5.5s6 2 6.5 5.5"/>
+        </svg>
+        <span class="sidebar-label">Sair</span>
+      </a>
+    </div>
+  </aside>
+
+  <main class="main-content">
+      <div class="content-header">
+          <div class="breadcrumb">Administração / Nova sala</div>
+          <div class="header-top-row">
+              <h1>Cadastrar sala</h1>
+          </div>
+          <p class="subtitle">Informe os dados e selecione os recursos disponíveis na sala.</p>
+      </div>
+
+      <div class="form-preview-grid">
+          <div class="form-container">
+              <section class="form-section">
+                  <div class="section-header">
+                      <h2>Dados da sala</h2>
+                      <span class="required-notice">* Campos obrigatórios</span>
+                  </div>
+
+                  <div class="form-row">
+                      <div class="form-group flex-2">
+                          <label for="room-name">Nome da sala *</label>
+                          <input type="text" id="room-name" value="Sala de Reuniões 01">
+                          <span class="form-hint">Use um nome que facilite a identificação da sala.</span>
+                      </div>
+                      <div class="form-group flex-1">
+                          <label for="room-capacity">Capacidade máxima *</label>
+                          <div class="input-with-suffix">
+                              <input type="number" id="room-capacity" value="20">
+                              <span class="suffix">pessoas</span>
+                          </div>
+                          <span class="form-hint">Informe um número inteiro maior que zero.</span>
+                      </div>
+                  </div>
+              </section>
+
+              <section class="form-section">
+                  <div class="section-header">
+                      <h2>Recursos da sala</h2>
+                      <span class="resources-count">3 selecionados</span>
+                  </div>
+                  <p class="section-desc">Busque e adicione os recursos disponíveis na sala.</p>
+
+                  <div class="resource-tags-box">
+                      <div class="tag">Projetor <span class="tag-close">&times;</span></div>
+                      <div class="tag">Wi-Fi <span class="tag-close">&times;</span></div>
+                      <div class="tag">Ar-condicionado <span class="tag-close">&times;</span></div>
+                      <input type="text" class="tag-input" placeholder="Adicionar recursos...">
+                      <span class="collapse-icon">&#9650;</span>
+                  </div>
+
+                  <div class="resource-catalog">
+                      <div class="catalog-search">
+                          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                          <input type="text" placeholder="Buscar recurso pelo nome...">
+                      </div>
+
+                      <ul class="catalog-list">
+                          <li class="catalog-item selected">
+                              <span class="item-name">Projetor</span>
+                              <span class="item-action"><i class="fa-solid fa-check"></i> Adicionado</span>
+                          </li>
+                          <li class="catalog-item selected">
+                              <span class="item-name">Wi-Fi</span>
+                              <span class="item-action"><i class="fa-solid fa-check"></i> Adicionado</span>
+                          </li>
+                          <li class="catalog-item selected">
+                              <span class="item-name">Ar-condicionado</span>
+                              <span class="item-action"><i class="fa-solid fa-check"></i> Adicionado</span>
+                          </li>
+                          <li class="catalog-item">
+                              <span class="item-name">Quadro branco</span>
+                              <span class="item-action">+ Adicionar</span>
+                          </li>
+                          <li class="catalog-item">
+                              <span class="item-name">TV / Monitor</span>
+                              <span class="item-action">+ Adicionar</span>
+                          </li>
+                      </ul>
+
+                      <div class="catalog-footer">
+                          <span class="catalog-info">Exibindo 5 de 15 recursos</span>
+                          <span class="catalog-mode">Seleção múltipla</span>
+                      </div>
+                  </div>
+
+                  <p class="catalog-tip">Adicione apenas os recursos que já estão instalados e disponíveis para uso.</p>
+              </section>
+                <div class="bottom-actions">
+          <span class="bottom-note">Confira os dados antes de cadastrar a sala.</span>
+          <div class="buttons">
+              <div class="button">Cancelar</div>
+              <div class="button primary">Cadastrar sala →</div>
+          </div>
+      </div>
+</div>
+
+          <div class="preview-container">
+              <div class="preview-box">
+                  <span class="preview-label">[ Prévia ]</span>
+                  <div class="preview-card">
+                      <h3>Sala de Reuniões 01</h3>
+                      <p class="preview-capacity">Até 20 pessoas</p>
+                      <p class="preview-resources">Projetor &middot; Wi-Fi &middot; Ar-condicionado</p>
+                  </div>
+                  <p class="preview-footer-text">A sala será criada ao confirmar o cadastro.</p>
+              </div>
+
+              <div class="info-box">
+                  <h3>Antes de cadastrar</h3>
+                  <p>Verifique a capacidade máxima e os recursos para que as reservas sejam feitas com as informações corretas.</p>
+                  <p class="info-sub">A prévia reflete os dados preenchidos ao lado.</p>
+              </div>
+          </div>
+      </div>
+
+      
+  </main>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ensalum | Busca de salas</title>
+  <link rel="stylesheet" href="busca.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <div class="nome-projeto">Ensalum</div>
+    <div class="pagina-atual">· Busca de salas</div>
+
+    <div class="perfil-professor" aria-label="Perfil do professor">
+      <div class="foto-professor" aria-hidden="true">WGS</div>
+      <span class="nome-professor">Prof. William Geraldo Sallum</span>
+    </div>
+  </header>
+
+<aside class="sidebar" aria-label="Menu lateral">
+  <a class="link-sidebar menu-ativado" href="../menu/index.html" aria-label="Menu principal" title="Menu principal"><span class="sidebar-icon" aria-hidden="true">☰</span><span class="sidebar-label">Menu</span></a>
+  <a class="link-sidebar" href="../menu/index.html" aria-label="Salas" title="Salas"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20h14M7 20V5l10-2v17M10 8h1m3-1h1m-5 5h1m3-1h1m-4 9v-5h3v5"/></svg><span class="sidebar-label">Salas</span></a>
+  <a class="link-sidebar ativado" href="../busca/busca.html" aria-label="Busca de salas" title="Busca de salas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg><span class="sidebar-label">Busca de salas</span></a>
+  <a class="link-sidebar" href="../agenda/agenda.html" aria-label="Minha Agenda" title="Minha Agenda"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1"/><path d="M8 3v4m8-4v4M4 9h16M8 12h2m4 0h2m-8 4h2m4 0h2"/></svg><span class="sidebar-label">Minha Agenda</span></a>
+  <a class="link-sidebar" href="../reserva/reserva.html" aria-label="Nova reserva" title="Nova reserva"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM8 3v4m8-4v4M4 9h16M8 13h3m2 0h3"/></svg><span class="sidebar-label">Nova reserva</span></a>
+  <div class="sidebar-bottom">
+    <a class="link-sidebar" href="#" aria-label="Ajuda" title="Ajuda"><span class="sidebar-icon" aria-hidden="true">?</span><span class="sidebar-label">Ajuda</span></a>
+    <a class="link-sidebar" href="#" aria-label="Perfil" title="Perfil"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20c.5-3.5 2.8-5.5 6.5-5.5s6 2 6.5 5.5"/></svg><span class="sidebar-label">Perfil</span></a>
+  </div>
+</aside>
+
+  <main class="main-content">
+    <section class="busca-titulo">
+      <h1>Busca de salas</h1>
+      <p class="subtitulo">Encontre uma sala para sua aula. Selecione o período e os recursos de que precisa.</p>
+    </section>
+
+    <form class="filtros-busca" action="#" method="get">
+      <div class="filtros-grid">
+        <div class="grupo-filtro">
+          <label class="rotulo" for="busca-data">Data</label>
+          <div class="controle">
+            <input id="busca-data" name="data" type="text" value="20 out. 2026" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+            <svg class="icone-controle" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M8 3v4m8-4v4M4 10h16"/></svg>
+          </div>
+        </div>
+
+        <div class="grupo-filtro">
+          <label class="rotulo" for="busca-inicio">Período</label>
+          <div class="controle">
+            <select id="busca-inicio" name="horario_inicial">
+              <option>08:00–09:00</option>
+              <option>09:00–10:00</option>
+              <option>10:00–11:00</option>
+              <option>11:00–12:00</option>
+              <option>13:00–14:00</option>
+              <option>14:00–15:00</option>
+              <option>15:00–16:00</option>
+              <option>16:00–17:00</option>
+              <option>17:00–18:00</option>
+            </select>
+            <svg class="icone-controle" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+          </div>
+        </div>
+
+        <div class="grupo-filtro">
+          <label class="rotulo" for="busca-capacidade">Capacidade mínima</label>
+          <div class="controle">
+            <select id="busca-capacidade" name="capacidade_minima">
+              <option value="10">10 pessoas</option>
+              <option value="20">20 pessoas</option>
+              <option value="30" selected>30 pessoas</option>
+              <option value="40">40 pessoas</option>
+              <option value="50">50 pessoas</option>
+              <option value="60">60 pessoas</option>
+              <option value="80">80 pessoas</option>
+            </select>
+            <svg class="icone-controle" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </div>
+        </div>
+
+        <div class="grupo-filtro grupo-recursos">
+          <span class="rotulo" id="rotulo-recursos">Recursos</span>
+          <details class="filtro-recursos">
+            <summary aria-labelledby="rotulo-recursos">
+              Todos os recursos
+              <svg class="icone-controle" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="opcoes-recursos">
+              <label><input type="checkbox" name="recursos" value="projetor"> Projetor</label>
+              <label><input type="checkbox" name="recursos" value="quadro-branco"> Quadro branco</label>
+              <label><input type="checkbox" name="recursos" value="ar-condicionado"> Ar-condicionado</label>
+              <label><input type="checkbox" name="recursos" value="tv"> TV</label>
+              <label><input type="checkbox" name="recursos" value="sistema-de-som"> Sistema de som</label>
+              <label><input type="checkbox" name="recursos" value="microfone"> Microfone</label>
+            </div>
+          </details>
+        </div>
+      </div>
+
+      <div class="filtros-acoes">
+        <div class="grupo-disponibilidade">
+          <span class="rotulo" id="rotulo-disponibilidade">Disponibilidade</span>
+          <div class="segmentado" role="radiogroup" aria-labelledby="rotulo-disponibilidade">
+            <input type="radio" id="disp-todas" name="disponibilidade" value="todas" checked>
+            <label for="disp-todas">Todas</label>
+            <input type="radio" id="disp-disponiveis" name="disponibilidade" value="disponiveis">
+            <label for="disp-disponiveis">Disponíveis</label>
+            <input type="radio" id="disp-indisponiveis" name="disponibilidade" value="indisponiveis">
+            <label for="disp-indisponiveis">Não disponíveis</label>
+          </div>
+        </div>
+
+        <div class="acoes-busca">
+          <button class="limpar-filtros" type="reset">Limpar filtros</button>
+          <button class="botao-busca" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>
+            <span>Buscar salas</span>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <hr class="divisor">
+
+    <section class="resultados" aria-labelledby="titulo-resultados">
+      <div class="resultados-topo">
+        <h2 id="titulo-resultados">Salas encontradas</h2>
+        <span class="contagem-salas">6 salas encontradas · 4 disponíveis · 2 não disponíveis</span>
+      </div>
+      <div class="resultados-sub">
+        <p class="resumo-busca">20 out. 2026 · 08:00–09:00 · A partir de 30 pessoas</p>
+      </div>
+
+      <div class="room-grid">
+        <article class="room-card">
+          <div class="card-topo">
+            <span class="status">[ Disponível ]</span>
+            <span class="tipo-sala">Sala de aula</span>
+          </div>
+          <h3>Sala 101</h3>
+          <p class="capacity">Até 40 pessoas</p>
+          <p class="resources">Projetor · Quadro branco · Ar-condicionado</p>
+          <p class="periodo">Livre no período · 08:00–09:00</p>
+          <a class="botao-reserva" href="../reserva/reserva.html">Reservar sala <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="room-card">
+          <div class="card-topo">
+            <span class="status">[ Não disponível ]</span>
+            <span class="tipo-sala">Sala de aula</span>
+          </div>
+          <h3>Sala 102</h3>
+          <p class="capacity">Até 30 pessoas</p>
+          <p class="resources">TV · Quadro branco · Ar-condicionado</p>
+          <p class="periodo">Indisponível no período · 08:00–09:00</p>
+          <span class="botao-reserva indisponivel" aria-disabled="true">Reserva indisponível <span aria-hidden="true">—</span></span>
+        </article>
+
+        <article class="room-card">
+          <div class="card-topo">
+            <span class="status">[ Disponível ]</span>
+            <span class="tipo-sala">Sala de aula</span>
+          </div>
+          <h3>Sala 203</h3>
+          <p class="capacity">Até 60 pessoas</p>
+          <p class="resources">Projetor · Sistema de som · Quadro branco</p>
+          <p class="periodo">Livre no período · 08:00–09:00</p>
+          <a class="botao-reserva" href="../reserva/reserva.html">Reservar sala <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="room-card">
+          <div class="card-topo">
+            <span class="status">[ Disponível ]</span>
+            <span class="tipo-sala">Sala de aula</span>
+          </div>
+          <h3>Sala 204</h3>
+          <p class="capacity">Até 45 pessoas</p>
+          <p class="resources">Projetor · Quadro branco · Ar-condicionado</p>
+          <p class="periodo">Livre no período · 08:00–09:00</p>
+          <a class="botao-reserva" href="../reserva/reserva.html">Reservar sala <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="room-card">
+          <div class="card-topo">
+            <span class="status">[ Não disponível ]</span>
+            <span class="tipo-sala">Sala de aula</span>
+          </div>
+          <h3>Sala 301</h3>
+          <p class="capacity">Até 80 pessoas</p>
+          <p class="resources">Projetor · Microfone · Ar-condicionado</p>
+          <p class="periodo">Indisponível no período · 08:00–09:00</p>
+          <span class="botao-reserva indisponivel" aria-disabled="true">Reserva indisponível <span aria-hidden="true">—</span></span>
+        </article>
+
+        <article class="room-card">
+          <div class="card-topo">
+            <span class="status">[ Disponível ]</span>
+            <span class="tipo-sala">Sala de aula</span>
+          </div>
+          <h3>Sala 302</h3>
+          <p class="capacity">Até 35 pessoas</p>
+          <p class="resources">TV · Quadro branco · Ar-condicionado</p>
+          <p class="periodo">Livre no período · 08:00–09:00</p>
+          <a class="botao-reserva" href="../reserva/reserva.html">Reservar sala <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <p class="nota-resultados">Exibindo todas as 6 salas para os filtros selecionados.</p>
+    </section>
+  </main>
+</body>
+</html>
